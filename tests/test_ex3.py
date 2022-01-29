@@ -7,6 +7,7 @@ from ex3.player import Player
 
 
 class TestGame(TestCase):
+
     def test_base_game_mechanics(self):
         bob = Player('Bob', ROCK_ACTION)
         alice = Player('Alice', SCISSORS_ACTION)
@@ -26,7 +27,7 @@ class TestGame(TestCase):
         bob.action = SCISSORS_ACTION
         winner = determine_winner(bob, alice)
         self.assertEqual(None, winner, 'Same Actions. Should not be able to determine winner')
-
+   
     def test_actions(self):
         match = PaperAction() == PaperAction() and ScissorsAction() == ScissorsAction() and RockAction() == RockAction()
         self.assertEqual(True, match, 'Same actions should match')
@@ -35,3 +36,5 @@ class TestGame(TestCase):
             PaperAction(), PaperAction(), RockAction(), RockAction(), ScissorsAction(), ScissorsAction()
         }
         self.assertEqual(len(available_actions), 3, 'Same actions should have same hash')
+        
+ 
